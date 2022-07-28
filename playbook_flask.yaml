@@ -1,0 +1,24 @@
+---
+- name: Installing the required softwares. Then the project will be ready to use.
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  tasks:
+  - name: Installing Pip3 
+    apt:
+      name: python3-pip
+      update_cache: yes
+  - name: Installing Flask
+    pip:
+      executable: pip3
+      name: flask
+      state: latest
+  - name: Copying the Flask app
+    copy:
+      src: /$PWD/hello.py
+      dest: /home/vagrant/hello.py
+  - name: Running the Flask app
+    shell: |
+      export FLASK_APP=hello
+      flask run
