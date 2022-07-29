@@ -5,14 +5,14 @@
   become: yes
 
   tasks:
-  - name: Installing Pip3 
+  - name: Installing Python3
     apt:
-      name: python3-pip
+      name: python3
+      state: latest
       update_cache: yes
   - name: Installing Flask
-    pip:
-      executable: pip3
-      name: flask
+    apt:
+      name: python3-flask
       state: latest
   - name: Copying the Flask app
     copy:

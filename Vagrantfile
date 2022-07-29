@@ -1,7 +1,9 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/thrusty64"
+  config.vm.box = "generic/ubuntu2204"
 
   config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  config.vm.network "private_network", ip: "192.168.56.21"
 
   config.vm.define "alpcndlkvm" do |node|
     node.vm.hostname = "alpcndlkvm.local"
