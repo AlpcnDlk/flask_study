@@ -18,7 +18,9 @@
     copy:
       src: /$PWD/hello.py
       dest: /home/vagrant/hello.py
+  - name:
+    shell: cd /home/vagrant
   - name: Running the Flask app
-    shell: |
-      export FLASK_APP=hello
-      flask run
+    shell: flask run --host 0.0.0.0
+    environment:
+      FLASK_APP: /home/vagrant/hello.py
