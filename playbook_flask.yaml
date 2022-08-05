@@ -17,6 +17,6 @@
   - name:
     shell: cd /home/vagrant/project
   - name: Running the Flask app
-    shell: nohup flask run --host 0.0.0.0 > flask_log.txt 2>&1 &
+    shell: nohup flask run --host 0.0.0.0 --reload > flask_log.txt 2>&1 &
     environment:
       FLASK_APP: /home/vagrant/project/hello.py
