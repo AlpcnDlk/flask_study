@@ -56,7 +56,7 @@ Get into the "flask_study" folder and run Vagrant.
    ```
 There may be a problem occurs due to the private ip address. In that case you should change the ip address from the Vagrantfile according to your ip address which will be given in the error message.
 
-After waiting Vagrant and Ansible doing their work, you will see "Running the Flask app" message in terminal. That means the project is ready to run.
+After waiting Vagrant and Ansible doing their work, you will see all tasks completed and you are back in control of terminal. That means the project is ready to run.
 [![terminalss][terminal-screenshot]]
 
 Now all you have to do is entering your ip address to your web browser. For example if you don't change the default ip address from Vagrantfile it will be "192.168.56.21:5000". "5000" port address is given by Flask.
